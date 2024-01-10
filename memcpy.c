@@ -3,17 +3,19 @@
 void *memcpy(void *dest, const void *src, size_t n)
 {
 
-    unsigned char *dst;
-    unsigned char *str;
+    char *dst;
+    char *str;
     int i;
 
-    str = src;
-    dst = dest;
+    if (dest == NULL)
+		return NULL;
+    
+    str = (char*)src;
+    dst = (char*)dest;
     i = 0;
     while(i < n)
     {
-        dst[i] = src[i];
+        dst[i] = str[i];
         i++;
     }
-
 }
