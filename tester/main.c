@@ -3,25 +3,19 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void *memcpy(void *dest, const void *src, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	int	i;
 
-    unsigned char *dst;
-    unsigned char *str;
-    int i;
-
-    str = src;
-    dst = dest;
-    i = 0;
-    while(i < n)
-    {
-        dst[i] = src[i];
-        i++;
-    }
-
+	i = 0;
+	while (s1[i] == s2[i] && i < n - 1)
+		i++;
+	return (s1[i] - s2[i]);
 }
 
 int main(int argc, char **argv)
 {
+  printf("%d\n",ft_strncmp(argv[1],argv[2],4));
+  printf("%d\n",strncmp(argv[1],argv[2],4));
   return 0;
 }
