@@ -1,6 +1,6 @@
 CODE_DIR := ./srcs/
 HEADER_DIR := ./includes/
-CFLAGS = -Wall -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 CFILES := $(wildcard $(CODE_DIR)*.c)
 COBJECTS = $(patsubst %.c, %.o , $(CFILES))
 BINARY = libft.a
