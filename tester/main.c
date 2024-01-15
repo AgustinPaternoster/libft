@@ -8,9 +8,7 @@
 int main(int argc, char **argv)
 {
   (void)argc;
-  (void)argv;
-  double *p = calloc(10,sizeof(double));
-  for (int i = 0; i < 5; i++)
-    printf("%f\n",p[i]);
+  char *p = ft_strjoin(argv[1],argv[2]);
+  printf("%s\n", p);
   return 0;
 }
