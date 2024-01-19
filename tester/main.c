@@ -7,7 +7,9 @@
 int main(int argc, char **argv)
 {
   (void)argc;
-  char *p = ft_itoa(atoi(argv[1]));
-  printf("%s\n",p);
+  (void)argv;
+  
+
+  
   return 0;
 }
