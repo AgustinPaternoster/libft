@@ -19,3 +19,15 @@ Data *ftnewdata(int nb,char *str , int len)
     ftstrcopy(p->a , str , len);
     return p;
 }
+
+void delete(void * data)
+{
+    Data *p = (Data *)data;
+    free(p);
+}
+
+void printlst(void * content)
+{
+    //Data * p = content;
+    printf("%s\n",*((int*)content)); 
+    }
