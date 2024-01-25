@@ -28,6 +28,13 @@ void delete(void * data)
 
 void printlst(void * content)
 {
-    //Data * p = content;
-    printf("%s\n",*((int*)content)); 
-    }
+    Data * p = content;
+    printf("%d\n",p->nb); 
+}
+
+void suma(void * content)
+{
+    Data * p = content;
+    p->nb += 10;
+}
+
