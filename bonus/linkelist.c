@@ -1,4 +1,4 @@
-#include "list.h"
+#include "libft.h"
 
 
 void ftstrcopy(char * dst,char *src, int len)

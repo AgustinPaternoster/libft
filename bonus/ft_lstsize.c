@@ -1,14 +1,15 @@
-#include "list.h"
+#include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-    int result;
-    t_list *tmp;
+    int		result;
+    t_list	*tmp;
 
     tmp = lst;
     result = 0;
-    while(tmp != NULL)
-    {   tmp = tmp->next;
+    while (tmp != NULL)
+    {  
+        tmp = tmp->next;
         result++;
     }
     return (result);

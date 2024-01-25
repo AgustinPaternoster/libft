@@ -1,21 +1,41 @@
-#include "list.h"
+#include "libft.h"
 
-void test (t_list ** list)
+void delete(void * data)
 {
-    printf("%p\n", list);
-    printf("%p\n", *list);
+    Data *p = (Data *)data;
+    free(p);
 }
+
 
 int main(int arc , char **argv)
 {
     (void)arc;
     (void)argv;
-    Data * uno = ftnewdata(5,argv[1],10);
+
+    void (*del)(void *data)= delete;
+    Data * uno = ftnewdata(5,"test1",10);
+    Data * dos = ftnewdata(5,"test2",10);
+    Data * tres = ftnewdata(5,"test3",10);
+
     t_list * lista = NULL;
+    printf("%p\n",lista);
 
     t_list * nodo1 = ft_lstnew(uno);
-    lista = nodo1;
-    test(&lista);
-    printf("%p\n", nodo1);
+    t_list * nodo2 = ft_lstnew(dos);
+    t_list * nodo3 = ft_lstnew(tres);
+
+    
+    ft_lstadd_front(&lista,nodo1);
+    ft_lstadd_front(&lista,nodo2);
+    ft_lstadd_front(&lista,nodo3);
+
+    printf("%d\n",ft_lstsize(lista));
+    ft_lstclear(&lista,del);
+    printf("%d\n",ft_lstsize(lista));
+    printf("%p\n",lista);
+
+    
+    
+
     return 0;
 }
